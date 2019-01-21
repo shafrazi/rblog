@@ -1,2 +1,26 @@
-<h1>Admin::Posts#index</h1>
-<p>Find me in app/views/admin/posts/index.html.erb</p>
+<div class="card card-body bg-light">
+  <h2 class="page-header">Manage posts
+    <%= link_to "Add new Post", new_admin_post_path, class: "btn btn-success" %>
+  </h2>
+  <% if @posts.exists? %>
+    <table class="table table-striped">
+      <tr>
+        <th>Post title</th>
+        <th>Post category</th>
+        <th>Actions</th>
+      </tr>
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= post.title %></td>
+          <td><%= post.category.name %></td>
+          <td>
+            <%= link_to "Edit", edit_admin_post_path(post), class: "btn btn-primary" %>
+            <%= link_to "Delete", admin_post_path(post), class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  <% else %>
+    <p>There are no posts to show.</p>
+  <% end %>
+</div>
