@@ -14,6 +14,8 @@ gem "mail_form"
 gem "simple_form"
 gem 'jquery-rails'
 gem "sprockets-rails"
+gem "will_paginate"
+gem "paperclip"
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets

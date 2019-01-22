@@ -22,6 +22,9 @@
         </tr>
       <% end %>
     </table>
+    <div class="digg_pagination">
+      <%= will_paginate @posts %>
+    </div>
   <% else %>
     <p>There are no users to show.</p>
   <% end %>

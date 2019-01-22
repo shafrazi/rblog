@@ -1,6 +1,10 @@
 class Admin::UsersController < Admin::ApplicationController
   def index
-    @users = User.all
+    if params[:search]
+      @users = User.search(params[:search]).all.order("created_at DESC").paginate(per_page: 10, page: params[:page])
+    else
+      @users = User.all.order("created_at DESC").paginate(per_page: 10, page: params[:page])
+    end
   end
 
   def show
@@ -45,7 +49,7 @@ class Admin::UsersController < Admin::ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:name, :email, :password)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
       #code
     end
 end
