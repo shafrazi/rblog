@@ -9,8 +9,15 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
-//= require rails-ujs
-//= require activestorage
+//= require jquery
+//= require jquery_ujs
 //= require turbolinks
+//= require bootstrap-sprockets
+//= require froala_editor.min.js
+//= require plugins/colors.min.js
+//= require plugins/video.min.js
+//= require plugins/font_family.min.js
+//= require plugins/font_size.min.js
+//= require plugins/lists.min.js
+//= require plugins/char_counter.min.js
 //= require_tree .
