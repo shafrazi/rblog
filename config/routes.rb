@@ -43,10 +43,14 @@ Rails.application.routes.draw do
 
   root "posts#index"
 
-  resources :posts, :categories, :comments
+  resources :posts, :categories
   resources :contacts, only: [:new, :create]
   namespace :admin do
-    resources :posts, :categories, :comments, :users
+    resources :posts, :categories, :comments, :users, :sessions
+  end
+
+  resources :posts do
+    resources :comments
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
