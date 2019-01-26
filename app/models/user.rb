@@ -6,4 +6,5 @@ class User < ApplicationRecord
     where("name like ? OR email like ?", "%#{query}%", "%#{query}")
     #code
   end
+
 end

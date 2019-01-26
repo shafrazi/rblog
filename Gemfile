@@ -13,7 +13,7 @@ gem "bcrypt"
 gem "mail_form"
 gem "simple_form"
 gem 'jquery-rails'
-gem "sprockets-rails"
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem "will_paginate"
 gem "paperclip"
 gem "wysiwyg-rails"

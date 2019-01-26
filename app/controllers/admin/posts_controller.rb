@@ -58,4 +58,6 @@ class Admin::PostsController < Admin::ApplicationController
       params.require(:post).permit(:title, :category_id, :user_id, :tags, :body, :image)
       #code
     end
+
+
 end

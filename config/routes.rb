@@ -2,10 +2,13 @@ Rails.application.routes.draw do
   get "contact", to: "contacts#new"
   get 'contacts/create'
   get "about", to: "about#index"
+
   namespace :admin do
-    get 'sessions/new'
-    get 'sessions/create'
+    get "login", to: "sessions#new"
+    post "login", to: "sessions#create"
+    delete "logout", to: "sessions#destroy"
   end
+
   namespace :admin do
     get 'users/index'
     get 'users/show'
